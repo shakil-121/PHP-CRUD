@@ -51,7 +51,7 @@
     <form class="mx-5" action="" name="stuForm" method="POST">
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="email" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 
         </div>
         <div class="mb-3">
@@ -81,7 +81,9 @@
     <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>  
+
+        <p>Develop By Shahadat Hossain</p>
 </body>
 
 </html>

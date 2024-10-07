@@ -12,12 +12,8 @@
 </head>
 
 <body>
-    <?php
-
     
-    ?>
-
-<div>
+<div class="mt-5">
     <h1 class="text-center ">STUDENT LIST</h1>
 </div>
 <div class="container mt-5">
@@ -34,19 +30,33 @@
             <tbody>
                 <?php 
                 include 'database.php';
-                $query = "SELECT * FROM students"; // Replace 'students' with your table name
-                $result = $conn->query(query:$query);
+                $query = "SELECT * FROM students"; 
 
+                if(isset($_GET['delId'])){
+                    $id=$_GET['delId']; 
+
+                    $sql="DELETE FROM students WHERE id='$id'"; 
+                    $deleteStudent=$conn->query($sql); 
+                    if($deleteStudent){
+                        header("location: student_list.php");
+                    }else{
+                        echo "Something wrong!" . $conn->error; 
+                       
+                    }
+                }
+                $result = $conn->query(query:$query);
+                $i=1;
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
-                        echo "<th scope='row'>" . $row["id"] . "</th>";
+                        // echo "<th scope='row'>" . $row["id"] . "</th>";
+                        echo "<th scope='row'>" . $i++ . "</th>";
                         echo "<td>" . $row["name"] . "</td>";
                         echo "<td>" . $row["email"] . "</td>";
                         echo "<td>" . $row["phone"] . "</td>";
                         echo "<td>
-                                <a href='edit.php?id=" . $row["id"] . "' class='btn btn-warning btn-sm'>Edit</a>
-                                <a href='delete.php?id=" . $row["id"] . "' class='btn btn-danger btn-sm'>Delete</a>
+                                <a href='edit.php?id=" . $row["id"] . "' class='btn btn-primary btn-sm'>View</a>
+                                <a href='?delId=" . $row["id"] . "' class='btn btn-danger btn-sm'>Delete</a>
                               </td>";
                         echo "</tr>";
                     }
