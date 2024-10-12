@@ -12,12 +12,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- Google font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap"
         rel="stylesheet">
     <!-- External css file    -->
     <link rel="stylesheet" href="./css/style.css">
@@ -30,7 +29,15 @@
         </div>
         <div class="Poppins">
             <?php
+            session_start(); // Start the session
             include 'database.php';
+
+            // Check if there is a success message to show the toast
+            if (isset($_SESSION['success_message'])) {
+                echo "<script>window.onload = function() { showToast(); };</script>";
+                unset($_SESSION['success_message']); // Clear the success message after displaying it
+            }
+
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
 
@@ -45,7 +52,6 @@
                     <h3>E-mail: <?php echo $row['email']; ?></h3>
                     <h3>Phone: <?php echo $row['phone']; ?></h3>
 
-                    <!-- Updated Edit Button with Modal Trigger -->
                     <button type="button" class="btn btn-primary">
                         <a href="student_list.php" class="text-decoration-none text-light">Back</a>
                     </button>
@@ -83,26 +89,48 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-primary" form="editForm">Save changes</button>
+                                    <button type="submit" class="btn btn-primary" form="editForm"><i class="fa-solid fa-upload"></i> Update</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <?php
                 } else {
-                    // Handle the case when no student data is found
                     echo "<h3>No student found with the given ID.</h3>";
                 }
             }
             ?>
 
-
+            <!-- Toast Notification -->
+            <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                <div id="liveToast" class="toast text-bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="me-auto">Success</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                    <div class="toast-body">
+                        Student information updated successfully!
+                    </div>
+                </div>
+            </div>
 
             <!-- Bootstrap JS and Popper.js -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
                 integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
                 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-</body>
 
+
+            <script>
+                // Function to show the toast notification
+                function showToast() {
+                    var toastElement = document.getElementById('liveToast');
+                    var toast = new bootstrap.Toast(toastElement);
+                    toast.show();
+                }
+            </script>
+
+        </div>
+    </div>
+</body>
 
 </html>
