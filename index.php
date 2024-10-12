@@ -8,10 +8,23 @@
     <!-- Bootstrap CDN  -->--
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <!-- External css file    -->
+    <link rel="stylesheet" href="./css/style.css">
 
 </head>
 
-<body>
+<body id="main">
     <?php
 
     include './database.php';
@@ -32,12 +45,19 @@
 
     ?>
 
-
-    <h1 class="text-center">Student Information Form</h1>
-    <br>
-    <hr>
-    <!-- <form action="" name="stuForm" onsubmit="validation(event)" method="POST"> -->
-    <!-- <form action="" name="stuForm" method="POST">
+    <div class="container">
+        <div class=" d-flex justify-content-end">
+            <div class="text-center">
+                <button type="button" class="btn btn-warning"><a class="text-decoration-none text-dark"
+                        href="./student_list.php"><i class="fa-solid fa-list"></i> Students List</a></button>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h1 id="'heading" class="text-center">CREATE NEW STUDENT</h1>
+        <br>
+        <!-- <form action="" name="stuForm" onsubmit="validation(event)" method="POST"> -->
+        <!-- <form action="" name="stuForm" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required><br><br>
         <label for="email">Email:</label>
@@ -48,32 +68,27 @@
     </form> -->
 
 
-    <form class="mx-5" action="" name="stuForm" method="POST">
-        <div class="mb-3">
-            <label for="name" class="form-label">Name</label>
-            <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        <form class="mx-5" action="" name="stuForm" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" 
+                    aria-describedby="emailHelp">
 
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" name="email" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="mb-3">
-            <label for="phone" class="form-label">Phone Number</label>
-            <input type="text" name="phone" class="form-control" id="exampleInputPassword1">
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <div class="container">
-        <div class="row">
-            <div class="col text-center">
-                <button type="button" class="btn btn-warning"><a class="text-decoration-none text-dark" href="./student_list.php">Students List</a></button>
             </div>
-        </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="text" name="phone" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Student <i class="fa-solid fa-user-plus"></i></button>
+        </form>
+        <br><br>
+
     </div>
-
-
 
 
     <!-- externel js file  -->
@@ -81,9 +96,9 @@
     <!-- Bootstrap CDN  -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>  
+        crossorigin="anonymous"></script>
 
-        <p>Develop By Shahadat Hossain</p>
+    <p class="text-center mt-5">©Develop By Shahadat Hossain</p>
 </body>
 
 </html>

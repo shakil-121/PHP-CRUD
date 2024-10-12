@@ -1,0 +1,29 @@
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+#list{
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+} 
+
+#heading{
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+} 
+#main{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+#tbl{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+.modal{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+img.image{
+    width: 100px;
+}
