@@ -24,7 +24,7 @@
 
 </head>
 
-<body id="main">
+<body id="main" style="background-color: #17153B;">
     <?php
 
     include './database.php';
@@ -48,13 +48,13 @@
     <div class="container">
         <div class=" d-flex justify-content-end">
             <div class="text-center">
-                <button type="button" class="btn btn-warning"><a class="text-decoration-none text-dark"
+                <button type="button" class="btn btn-primary "><a class="text-decoration-none text-light"
                         href="./student_list.php"><i class="fa-solid fa-list"></i> Students List</a></button>
             </div>
         </div>
     </div>
-    <div class="container mt-5">
-        <h1 id="'heading" class="text-center">CREATE NEW STUDENT</h1>
+    <div class="container px-3 py-2 rounded-5 shadow my-5" style="background-color: #F4F6FF;">
+        <h1 id="'heading" class="text-center mt-3">CREATE NEW STUDENT</h1>
         <br>
         <!-- <form action="" name="stuForm" onsubmit="validation(event)" method="POST"> -->
         <!-- <form action="" name="stuForm" method="POST">
@@ -77,11 +77,11 @@
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email Address</label>
-                <input type="email" name="email" class="form-control" id="exampleInputPassword1">
+                <input type="email" name="email" class="form-control" id="exampleInputPassword1" required>
             </div>
             <div class="mb-3">
                 <label for="phone" class="form-label">Phone Number</label>
-                <input type="text" name="phone" class="form-control" id="exampleInputPassword1">
+                <input type="text" name="phone" class="form-control" id="exampleInputPassword1" required>
             </div>
 
             <button type="submit" class="btn btn-primary">Create Student <i class="fa-solid fa-user-plus"></i></button>

@@ -30,11 +30,13 @@
         <button class="btn btn-primary  mt-5 me-5"><a href="index.php" class="text-decoration-none text-light"> ADD
                 STUDENT <i class="fa-solid fa-user-plus"></i></a></button>
     </div>
-    <div class="mt-5" id="list">
-        <h1 class="text-center ">STUDENT LIST</h1>
+   <div class="container px-3 py-1 rounded-5 shadow my-4" style="background-color: #F4F6FF;">
+   <div class="mt-5" id="list">
+        <h1 class="text-center ">STUDENTS LIST</h1>
     </div>
-    <div class="container mt-5">
-        <table id="tbl" class="table table-hover mx-5">
+    <div>
+   </div>
+        <table id="tbl" class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">ID</th>
@@ -47,8 +49,7 @@
             <tbody>
                 <?php
                 include 'database.php';
-                $query = "SELECT * FROM students";
-
+               
                 if (isset($_GET['delId'])) {
                     $id = $_GET['delId'];
 
@@ -61,7 +62,9 @@
                         echo "Something wrong!" . $conn->error;
 
                     }
-                }
+                } 
+
+                $query = "SELECT * FROM students";
                 $result = $conn->query(query: $query);
                 $i = 1;
                 if ($result->num_rows > 0) {

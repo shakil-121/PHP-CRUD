@@ -53,7 +53,7 @@
                     <h3>Phone: <?php echo $row['phone']; ?></h3>
 
                     <button type="button" class="btn btn-primary">
-                        <a href="student_list.php" class="text-decoration-none text-light">Back</a>
+                        <a href="student_list.php" class="text-decoration-none text-light"><i class="fa-solid fa-backward"></i> Back</a>
                     </button>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
                         <i class="fa-solid fa-pen-to-square"></i> Edit
