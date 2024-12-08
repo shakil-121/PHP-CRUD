@@ -71,8 +71,7 @@
         <form class="mx-5" action="" name="stuForm" method="POST">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
-                <input type="text" name="name" class="form-control" 
-                    aria-describedby="emailHelp">
+                <input type="text" name="name" class="form-control" aria-describedby="emailHelp">
 
             </div>
             <div class="mb-3">
@@ -89,6 +88,43 @@
         <br><br>
 
     </div>
+    <!--intenal JS -->
+
+    <script type="text/javascript">
+        var a = 0, b = 1, c;  // Initialize variables
+        document.write("Fibonacci Series:<br/>");  // Output the heading
+
+        // Output the first two numbers of the Fibonacci series
+        document.write(a + "<br/>");
+        document.write(b + "<br/>");
+
+        for (var i = 2; i < 10; i++) {  // Loop to display the next 8 numbers (total 10 terms)
+            c = a + b;  // Calculate the next number
+            document.write(c + "<br/>");  // Write the Fibonacci number
+
+            a = b;  // Shift `a` to the next number
+            b = c;  // Shift `b` to the next number
+        }
+    </script>
+    <script type="text/javascript">
+var a = 10, b = 20, c = 7;  // Initialize three variables with values
+
+/* checks a<b and a<c if both conditions satisfied, a is smaller */
+if (a < b && a < c) {
+    document.write("<b>A is minimum</b>");
+}
+
+/* checks b<a and b<c if both conditions satisfied, b is smaller */
+else if (b < a && b < c) {
+    document.write("<b>B is minimum</b>");
+}
+
+/* if the above two conditions were false, c is smaller */
+else {
+    document.write("<b>C is minimum</b>");
+}
+</script>
+
 
 
     <!-- externel js file  -->
@@ -98,7 +134,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <p class="text-center mt-5">©Develop By Shahadat Hossain</p>
+    <p class="text-center mt-5 text-light">©Develop By Shahadat Hossain</p>
 </body>
 
 </html>

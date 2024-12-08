@@ -47,22 +47,22 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
+            <?php
                 include 'database.php';
                
-                if (isset($_GET['delId'])) {
-                    $id = $_GET['delId'];
+                if(isset($_GET['delId'])){
+                    $id=$_GET['delId']; 
 
-                    $sql = "DELETE FROM students WHERE id='$id'";
-                    $deleteStudent = $conn->query($sql);
-                    if ($deleteStudent) {
-                        header("location: student_list.php");
+                    $sql="DELETE FROM students WHERE id='$id'";
+
+                    $deletestudent=$conn->query($sql); 
+                    if($deletestudent){
+                        header("Location:student_list.php"); 
                         echo "Delete Successfully";
-                    } else {
-                        echo "Something wrong!" . $conn->error;
-
+                    }else{
+                        echo "Something wrong! ". $conn->error;
                     }
-                } 
+                }
 
                 $query = "SELECT * FROM students";
                 $result = $conn->query(query: $query);
@@ -99,6 +99,17 @@
 
 
 
+
+
+
+    
+
+
+
+
+
+    <!-- <a href='single_student.php?id=" . $row["id"] . "' class='btn btn-primary btn-sm'><i class='fa-solid fa-eye'></i> View </a>
+    <a href='?delId=" . $row["id"] . "' class='btn btn-danger btn-sm'>Delete <i class='fa-solid fa-trash'></i></a> -->
 
 
 
